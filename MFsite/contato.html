@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Escola Estadual Maria Floripes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg">
+    <header>
+        <div class="logo">
+            <img src="logoMf.jfif" alt="Maria Floripes Nascimento Alves" class="logo-img">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="noticia.html">Notícias</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <div class="perfil-usuario">
+            <img src="fotoPerfil.png" alt="Perfil do Usuário" id="perfil-foto">
+            <div class="perfil-texto" id="perfil-texto">
+                <p><a href="login.html">Usuário</a></p>
+            </div>
+        </div>
+        <div class="menu-toggle" id="mobile-menu-toggle">
+            ☰
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-info">
+            <h1>Entre em Contato Conosco</h1>
+            <p>Caso tenha dúvidas, sugestões ou queira saber mais sobre a escola, entre em contato através dos canais abaixo:</p>
+
+            <div class="contact-details">
+                <div class="contact-item">
+                    <h3>📧 E-mail</h3>
+                    <p>escola.10430@educacao.mg.gov.br</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📞 Telefone</h3>
+                    <p>(31) 3485 1842</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📍 Endereço</h3>
+                    <p><a href="https://maps.app.goo.gl/xhC68gyZ4XPpxM479"> Hybris, 270
+                        SRE METROPOLITANA A
+                        Ana Lúcia
+                        Sabará
+                        34710-080</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>🔗 Redes Sociais</h3>
+                    <p>
+                        <a href="https://www.instagram.com/eemariafloripes/">Instagram</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="map-section">
+            <h2>Localização</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3752.0495360223304!2d-43.9066421!3d-19.880130100000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa69afe360d0c7f%3A0xf1cecb70d7e4abae!2sR.%20Hybris%2C%20270%20-%20Ana%20L%C3%BAcia%2C%20Sabar%C3%A1%20-%20MG%2C%2034710-080!5e0!3m2!1spt-BR!2sbr!4v1726060708708!5m2!1spt-BR!2sbr" width="800" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer class="foo">
+        <p>&copy; 2024 Escola Estadual Maria Floripes Nascimento Alves. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const navUl = document.querySelector('nav ul');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navUl.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>

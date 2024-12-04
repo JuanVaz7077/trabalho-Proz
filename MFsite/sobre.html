@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - Escola Estadual Maria Floripes Nascimento Alves</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bod">
+    <header>
+        <div class="logo">
+            <img src="logoMf.jfif" alt="Logo da Escola Maria Floripes" class="logo-img">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="noticia.html">Notícias</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <div class="perfil-usuario">
+            <img src="fotoPerfil.png" alt="Perfil do Usuário" id="perfil-foto">
+            <div class="perfil-texto" id="perfil-texto">
+                <p><a href="login.html">Usuário</a></p>
+            </div>
+        <div class="menu-toggle" id="mobile-menu-toggle">
+            ☰
+        </div>
+    </header>
+
+    <main class="mi">
+        <section class="sobre-section">
+            <h1>Sobre a Escola</h1>
+
+            <article class="sobre-content">
+                <h2>A Fundação da Escola</h2>
+                <p>
+                    A Escola Estadual Maria Floripes Nascimento Alves foi fundada com a colaboração ativa da comunidade local, 
+                    que já vislumbrava a necessidade de um novo estabelecimento educacional. A construção da escola começou 
+                    em abril de 1985, e a sua criação oficial se deu pelo Decreto 25.565, de 13 de fevereiro de 1986.
+                </p>
+                <p>
+                    O funcionamento teve início com 784 alunos no dia 17 de fevereiro de 1986, e a inauguração oficial 
+                    ocorreu em 23 de agosto do mesmo ano, com a presença de autoridades locais e membros da comunidade escolar.
+                </p>
+
+                <h2>Quem Foi Maria Floripes Nascimento Alves?</h2>
+                <p>
+                    O nome "Maria Floripes Nascimento Alves" foi escolhido em homenagem a Floripes, uma figura emblemática 
+                    que nasceu em 13 de agosto de 1938, em Santana de Pirapama. Floripes era conhecida por seu trabalho 
+                    comunitário em Belo Horizonte, especialmente nas “Ruas de Lazer”, que visavam promover o desenvolvimento 
+                    social e intelectual.
+                </p>
+                <p>
+                    Seu nome, que remete à flor do ipê que floresce no período seco, simboliza uma pessoa que, apesar das 
+                    dificuldades, se destacou pela sua singularidade e contribuição à educação e à comunidade.
+                </p>
+
+                <h2>Missão e Visão da Escola</h2>
+                <p>
+                    A missão da Escola Estadual Maria Floripes Nascimento Alves é proporcionar uma educação integral que 
+                    favoreça o desenvolvimento humano e a cidadania dos alunos, promovendo um ambiente de aprendizagem 
+                    inclusivo e acolhedor.
+                </p>
+                <p>
+                    A visão da escola é ser uma instituição referência em educação, capaz de preparar seus estudantes para os 
+                    desafios do futuro e para a construção de um projeto de vida autônomo e solidário.
+                </p>
+
+                <h2>Valores que Promovemos</h2>
+                <p>
+                    A escola valoriza a tolerância, a cidadania e a alta expectativa na aprendizagem dos alunos. Promove o 
+                    respeito às diferenças e a inclusão, com um compromisso com a qualidade da educação e a valorização das 
+                    experiências e vivências dos estudantes.
+                </p>
+                <p>
+                    Os valores centrais incluem a defesa dos Direitos Humanos, o reconhecimento e respeito à diversidade, e a 
+                    construção de um ambiente escolar democrático e acolhedor.
+                </p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Escola Estadual Maria Floripes Nascimento Alves. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
+<script>
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const navUl = document.querySelector('nav ul');
+    const perfilFoto = document.getElementById('perfil-foto');
+    const perfilUsuario = document.querySelector('.perfil-usuario');
+
+    mobileMenuToggle.addEventListener('click', () => {
+        navUl.classList.toggle('show');
+    });
+    perfilFoto.addEventListener('click', () => {
+        perfilUsuario.classList.toggle('show');
+    });
+</script>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Interativo - Estilo Instagram</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logoMf.jfif" alt="Maria Floripes Nascimento Alves">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="noticia.html">Notícias</a></li>
+                <li><a href="contato.php">Contato</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <div class="perfil-usuario">
+            <img src="fotoPerfil.png" alt="Perfil do Usuário" id="perfil-foto">
+            <div class="perfil-texto" id="perfil-texto">
+                <p><a href="login.html">Usuário</a></p>
+            </div>
+        </div>
+        <div class="menu-toggle" id="mobile-menu-toggle">
+            ☰
+        </div>
+    </header>
+
+    <main>
+        <section class="blog-post-form">
+            <h2>Publique no Blog</h2>
+            <form id="formPostagem">
+                <div class="form-group">
+                    <label for="mensagem">Escreva sua Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="imagem">Escolha uma Imagem:</label>
+                    <input type="file" id="imagem" name="imagem" accept="image/*">
+                </div>
+                <button type="submit">Publicar</button>
+            </form>
+        </section>
+
+        <section class="blog-posts">
+            <h2>Publicações Recentes</h2>
+            <div id="postagens" class="postagens-container"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Escola Estadual Maria Floripes Nascimento Alves. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const formPostagem = document.getElementById('formPostagem');
+        const postagensDiv = document.getElementById('postagens');
+
+        formPostagem.addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita o envio real do formulário
+
+            // Obter mensagem e imagem do formulário
+            const mensagem = document.getElementById('mensagem').value;
+            const imagemInput = document.getElementById('imagem');
+            const imagemArquivo = imagemInput.files[0];
+
+            // Criar nova postagem
+            const novaPostagem = document.createElement('div');
+            novaPostagem.classList.add('postagem');
+
+            // Cabeçalho da postagem com nome do usuário
+            const cabecalhoPostagem = document.createElement('div');
+            cabecalhoPostagem.classList.add('postagem-cabecalho');
+            cabecalhoPostagem.innerHTML = `
+                <img src="fotoPerfil.png" alt="Usuário" class="postagem-usuario-img">
+                <span class="postagem-usuario-nome">Usuário Exemplo</span>
+            `;
+            novaPostagem.appendChild(cabecalhoPostagem);
+
+            // Adicionar mensagem à postagem
+            const paragrafoMensagem = document.createElement('p');
+            paragrafoMensagem.textContent = mensagem;
+            novaPostagem.appendChild(paragrafoMensagem);
+
+            // Se houver uma imagem, adicionar à postagem
+            if (imagemArquivo) {
+                const leitorImagem = new FileReader();
+                leitorImagem.onload = function(e) {
+                    const imagemPostagem = document.createElement('img');
+                    imagemPostagem.src = e.target.result;
+                    imagemPostagem.alt = 'Imagem da Postagem';
+                    imagemPostagem.classList.add('postagem-imagem');
+                    novaPostagem.appendChild(imagemPostagem);
+                };
+                leitorImagem.readAsDataURL(imagemArquivo);
+            }
+
+            // Seção de interações
+            const interacoesPostagem = document.createElement('div');
+            interacoesPostagem.classList.add('postagem-interacoes');
+            interacoesPostagem.innerHTML = `
+                <button class="like-btn">❤️ Curtir</button>
+                <button class="comment-btn">💬 Comentar</button>
+                <button class="share-btn">📤 Compartilhar</button>
+            `;
+            novaPostagem.appendChild(interacoesPostagem);
+
+            // Adicionar nova postagem à seção de postagens
+            postagensDiv.prepend(novaPostagem);
+
+            // Limpar o formulário após a publicação
+            formPostagem.reset();
+        });
+
+        // Menu mobile toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const navUl = document.querySelector('nav ul');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navUl.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>

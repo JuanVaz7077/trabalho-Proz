@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Escola Estadual Maria Floripes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logoMf.jfif" alt="Maria Floripes Nascimento Alves" >
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="noticia.html">Noticias</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="perfil-usuario">
+            <img src="fotoPerfil.png" alt="Perfil do Usuário">
+        </div>
+        <div class="menu-toggle" id="mobile-menu-toggle">
+            ☰
+        </div>
+    </header>
+
+    <main>
+        <section class="contato-form">
+            <h2>Crie sua conta</h2>
+            <form id="formContato" action="processa_contato.php" method="POST">
+                <div class="form-group">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" required>
+                </div>
+                <div class="form-group">
+                    <label for="cpf">CPF:</label>
+                    <input type="text" id="cpf" name="cpf" required>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Escola Estadual Maria Floripes Nascimento Alves. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
+<script>
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const navUl = document.querySelector('nav ul');
+    const perfilFoto = document.getElementById('perfil-foto');
+    const perfilUsuario = document.querySelector('.perfil-usuario');
+
+    mobileMenuToggle.addEventListener('click', () => {
+        navUl.classList.toggle('show');
+    });
+    perfilFoto.addEventListener('click', () => {
+        perfilUsuario.classList.toggle('show');
+    });
+</script>

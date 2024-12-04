@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escola Estadual Maria Floripes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logoMf.jfif" alt="Maria Floripes Nascimento Alves">
+        </div>
+        <nav>
+            <ul>
+                <li><a href=""></a></li>
+                <li><a href="noticia.html">Noticias</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="contato.php">Login</a></li>
+            </ul>
+        </nav>
+        <div class="perfil-usuario">
+            <img src="fotoPerfil.png" alt="Perfil do Usuário" id="perfil-foto">
+            <div class="perfil-texto" id="perfil-texto">
+                <p><a href="login.html">Usuário</a></p>
+            </div>
+        </div>
+        <div class="menu-toggle" id="mobile-menu-toggle">
+            ☰
+        </div>
+    </header>
+    
+
+    <main>
+        <section class="boas-vindas">
+            <h1>Bem-Vindo</h1>
+            <div class="banner">
+                <p>O que podemos oferecer?</p>
+                <button class="saibaMais">Saiba mais</button>
+            </div>
+        </section>
+
+        <section class="categorias">
+            <h2>✨Topicos da nossa escola✨</h2>
+            <div class="materias-grid">
+                <div class="materia"><a href="sobre.html">
+                    <h3>Maria Floripes</h3>
+                    <p>Por que do nome?</p>
+                    <img src="logoMf.jfif" class="imgMateria"></a>
+                </div>
+                <div class="materia"><a href="noticia.html">
+                    <h3>Projetos</h3>
+                    <p>Como inovamos?</p>
+                    <img src="projeto.jfif" class="imgMateria"></a>
+                </div>
+                <div class="materia"><a href="blog.html">
+                    <h3>Comentarios</h3>
+                    <p>Fale sobre nos</p>
+                    <img src="blog.jpeg" class="imgMateria1"></a>
+                </div>
+                <div class="materia"><a href="login.html">
+                    <h3>Sua conta</h3>
+                    <p>Crie a sua conta</p>
+                    <br>
+                    <img src="fotoPerfil.png" class="imgMateria3"></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Escola Estadual Maria Floripes Nascimento Alves. Todos os direitos reservados.</p>
+    </footer>
+
+
+</body>
+</html>
+<script>
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const navUl = document.querySelector('nav ul');
+    const perfilFoto = document.getElementById('perfil-foto');
+    const perfilUsuario = document.querySelector('.perfil-usuario');
+
+    mobileMenuToggle.addEventListener('click', () => {
+        navUl.classList.toggle('show');
+    });
+    perfilFoto.addEventListener('click', () => {
+        perfilUsuario.classList.toggle('show');
+    });
+</script>

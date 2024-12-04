@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias - Escola Estadual Maria Floripes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logoMf.jfif" alt="Logo da Escola Maria Floripes">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="contato.php">Login</a></li>
+            </ul>
+        </nav>
+        <div class="perfil-usuario">
+            <img src="fotoPerfil.png" alt="Perfil do Usuário" id="perfil-foto">
+            <div class="perfil-texto" id="perfil-texto">
+                <p><a href="login.html">Usuário</a></p>
+            </div>
+        </div>
+        <div class="menu-toggle" id="mobile-menu-toggle">
+            ☰
+        </div>
+    </header>
+
+    <main class="ma">
+        <section class="noticias-section">
+            <h1 class="noticias-titulo">Últimas Notícias</h1>
+
+            <div class="noticia-card">
+                <h2 class="noticia-titulo">Apresentação dos grupos tecnicos</h2>
+                <p class="noticia-data">Publicado em: 13 de setembro de 2024</p>
+                <p class="noticia-texto curta">
+                    Os alunos do segundo ano tecnico irão apresentar seus trabalhos nesta sexta-feira, dia 13/09
+                </p>
+                <p class="noticia-texto completa" style="display: none;">
+                    Os alunos do segundo ano técnico irão apresentar seus trabalhos nesta sexta-feira, dia 13/09. Onde estarão apresentando o trabalho de "Desenvolvimento Web" do professor Leandro, em frente a toda a escola, no horário de 10:00 am. Também acontecerá outras apresentações, que são as:
+                    culminância da turma de alimentos com o professor Josiano e culminância de arquitetura e manutenção (Italubosco)
+                    
+                </p>
+                <a href="#" class="noticia-leia-mais" onclick="expandirTexto(event)">Leia Mais</a>
+            </div>
+
+            <div class="noticia-card">
+                <h2 class="noticia-titulo"> excursão Universidade Federal de Minas Gerais(UFMG) </h2>
+                <p class="noticia-data">Publicado em: 11 de setembro de 2024</p>
+                <img src="noticiaUFMG.jpeg" alt="Imagem da Notícia 2" class="noticia-imagem">
+                <p class="noticia-texto curta">
+                    
+                  Os alunos da escola foram para uma excursão na Universidade Federal de Minas Gerais (UFMG).
+
+
+                </p>
+                <p class="noticia-texto completa" style="display: none;">
+                    Os alunos da escola foram para uma excursão na Universidade Federal de Minas Gerais (UFMG). Perguntamos para um dos alunos presentes como foi sua experiência na excursão. Ele nos disse que foi uma experiência extremamente relaxante e única. Com aprendizados diferentes e uma atmosfera agradável. O mesmo também nos disse que tudo o que aprendeu foi extremamente interessante. Desde a ambientação do lugar até sobre os seres que o habitam. 
+
+                </p>
+                <a href="#" class="noticia-leia-mais" onclick="expandirTexto(event)">Leia Mais</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Escola Estadual Maria Floripes Nascimento Alves. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Função para expandir o texto
+        function expandirTexto(event) {
+            event.preventDefault(); // Evita o comportamento padrão do link
+            const card = event.target.closest('.noticia-card'); // Encontra o card onde foi clicado
+            const curta = card.querySelector('.curta'); // Texto curto
+            const completa = card.querySelector('.completa'); // Texto completo
+
+            if (completa.style.display === 'none') {
+                completa.style.display = 'block'; // Mostra o texto completo
+                curta.style.display = 'none'; // Esconde o texto curto
+                event.target.textContent = 'Leia Menos'; // Muda o texto do link
+            } else {
+                completa.style.display = 'none'; // Esconde o texto completo
+                curta.style.display = 'block'; // Mostra o texto curto
+                event.target.textContent = 'Leia Mais'; // Muda o texto do link de volta
+            }
+        }
+    </script>
+</body>
+</html>
